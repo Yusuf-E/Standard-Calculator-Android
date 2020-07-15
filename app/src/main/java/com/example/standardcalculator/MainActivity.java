@@ -3,18 +3,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private int objectLength = 20;
-    private TextView textView1 ;
+   public TextView textView1 ;
     private TextView textView2;
     private GridLayout gridLayout1;
+    public MainActivity mainActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+            mainActivity = new MainActivity();
                 textView1 =((TextView) findViewById(R.id.textView1));
                 textView2 = ((TextView) findViewById(R.id.textView2));
                 gridLayout1 = ((GridLayout) findViewById(R.id.gridLayout));
@@ -55,7 +58,137 @@ public class MainActivity extends AppCompatActivity {
          buttons[i].setWidth(width);
          buttons[i].setHeight(heigth);
         }
+        buttonClick(buttons);
+    }
+    public void buttonClick(Button buttons[]){
+        buttons[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText("");
+            }
+        });
+        buttons[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"%");
+            }
+        });
+        buttons[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int length = textView2.getText().length();
+                int number = textView2.getText().length()-1;
+                String store;
+                if(length>0) {
+                    StringBuilder back = new StringBuilder(textView2.getText());
+                    back.deleteCharAt(number);
+                    store = back.toString();
+                    textView2.setText(store);
+                }
+            }
+        });
+        buttons[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"/");
+            }
+        });
+            buttons[4].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   textView2.setText(textView2.getText()+"7");
+                }
+            });
+        buttons[5].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               textView2.setText(textView2.getText()+"8");
+            }
+        });
+        buttons[6].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"9");
+            }
+        });
+        buttons[7].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"X");
+            }
+        });
+        buttons[8].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"4");
+            }
+        });
+        buttons[9].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"5");
+            }
+        });
+        buttons[10].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"6");
+            }
+        });
+        buttons[11].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"-");
+            }
+        });
+        buttons[12].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"1");
+            }
+        });
+        buttons[13].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"2");
+            }
+        });
+        buttons[14].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"3");
+            }
+        });
+        buttons[15].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"+");
+            }
+        });
+        buttons[16].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText("-"+textView2.getText());
+            }
+        });
+        buttons[17].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+"0");
+            }
+        });
+        buttons[18].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView2.setText(textView2.getText()+",");
+            }
+        });
+        buttons[19].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
     }
 }
-//ekrangenis = 400
-//dikey 660
+//Screenwidth = 400
+//ScreenHeigth 660
