@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:background="#DD0000"
         android:text=""
+        android:textSize="30sp"
+        android:gravity="center_vertical|end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -171,7 +173,7 @@
             android:id="@+id/button23"
             android:width="80dp"
             android:height="80dp"
-            android:text=","
+            android:text="."
             android:textSize="30sp" />
 
         <Button
