@@ -10,7 +10,8 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DD0000"
+        android:background="@color/txtbg"
+        android:textColor="@color/numtxt"
         android:text=""
         android:textSize="30sp"
         android:gravity="center_vertical|end"
@@ -22,7 +23,8 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#14FF04"
+        android:background="@color/txtbg"
+        android:textColor="@color/numtxt"
         android:gravity="center_vertical|end"
         android:text=""
         android:textSize="30sp"
@@ -34,7 +36,7 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/colorAccent"
+        android:background="@color/opbot"
         android:columnCount="4"
         android:rowCount="5"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,6 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="#D2691E"
             android:id="@+id/button5"
             android:width="80dp"
             android:height="80dp"
@@ -51,6 +55,8 @@
             android:textStyle="normal" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button6"
             android:width="80dp"
             android:height="80dp"
@@ -58,6 +64,8 @@
             android:textSize="24sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button7"
             android:width="80dp"
             android:height="80dp"
@@ -65,6 +73,8 @@
             android:textSize="24sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button8"
             android:width="80dp"
             android:height="80dp"
@@ -72,6 +82,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button9"
             android:width="80dp"
             android:height="80dp"
@@ -79,6 +91,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button10"
             android:width="80dp"
             android:height="80dp"
@@ -86,6 +100,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button11"
             android:width="80dp"
             android:height="80dp"
@@ -93,6 +109,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button12"
             android:width="80dp"
             android:height="80dp"
@@ -100,6 +118,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button13"
             android:width="80dp"
             android:height="80dp"
@@ -107,6 +127,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button14"
             android:width="80dp"
             android:height="80dp"
@@ -114,6 +136,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button15"
             android:width="80dp"
             android:height="80dp"
@@ -121,6 +145,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button16"
             android:width="80dp"
             android:height="80dp"
@@ -128,6 +154,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button17"
             android:width="80dp"
             android:height="80dp"
@@ -135,6 +163,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button18"
             android:width="80dp"
             android:height="80dp"
@@ -142,6 +172,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button19"
             android:width="80dp"
             android:height="80dp"
@@ -149,6 +181,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button20"
             android:width="80dp"
             android:height="80dp"
@@ -156,6 +190,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button21"
             android:width="80dp"
             android:height="80dp"
@@ -163,6 +199,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button22"
             android:width="80dp"
             android:height="80dp"
@@ -170,6 +208,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/numbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button23"
             android:width="80dp"
             android:height="80dp"
@@ -177,6 +217,8 @@
             android:textSize="30sp" />
 
         <Button
+            android:background="@color/opbot"
+            android:textColor="@color/numtxt"
             android:id="@+id/button24"
             android:width="80dp"
             android:height="80dp"

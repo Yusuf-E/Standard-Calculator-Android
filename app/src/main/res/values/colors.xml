@@ -3,4 +3,8 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="numbot">#1C1C1C</color>
+    <color name="numtxt">#76CC7A</color>
+    <color name="opbot">#363636</color>
+    <color name="txtbg">#4F4F4F</color>
 </resources>
