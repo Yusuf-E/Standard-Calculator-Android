@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     ButtonFunctions buttonFunctions = new ButtonFunctions();
     private String data;
-    private int objectLength = 20,counter=0,negcounter=0;
+    private int objectLength = 20,counter=0,negcounter=0,startCounter=0,dotCounter=0,operationCounter=0;
    public TextView textView1 ;
     private TextView textView2;
     private GridLayout gridLayout1;
@@ -72,13 +72,24 @@ public class MainActivity extends AppCompatActivity {
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (counter==0){
-                    textView1.setText( buttonFunctions.percent(textView2.getText()));
-                    textView2.setText(textView2.getText()+"%");
-                }
-                else {
+                String data = textView2.getText().toString();
+                try {
+                    if (data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("+")||data.endsWith("-")||data.endsWith(".")||operationCounter==2){
+                        textView2.setText(textView2.getText());
+                    }
+                    else if (counter==0&&operationCounter!=0){
+                        operationCounter++;
+                        dotCounter=0;
+                        textView1.setText( buttonFunctions.percent(textView2.getText()));
+                        textView2.setText(textView2.getText()+"%");
+                    }
+                    else {
+                        textView1.setText(buttonFunctions.percent(textView1.getText()));
+                        textView2.setText("%");
+                    }
+                } catch (Exception e) {
                     textView1.setText(buttonFunctions.percent(textView1.getText()));
-                    textView2.setText(textView2.getText());
+                    textView2.setText("%");
                 }
             }
         });
@@ -99,17 +110,25 @@ public class MainActivity extends AppCompatActivity {
         buttons[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( buttonFunctions.operatorsCheck(textView2.getText())==false){
-                    textView2.setText(textView2.getText());
-                }
-                else {
-                    textView2.setText(textView2.getText()+"/");
-                }
+               try {
+                   String data = textView2.getText().toString();
+                   if (data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("+")||data.endsWith("-")||startCounter==0||data.endsWith(".")){
+                       textView2.setText(textView2.getText());
+                   }
+                   else {
+                       operationCounter++;
+                       dotCounter=0;
+                       textView2.setText(textView2.getText()+"/");
+                   }
+               } catch (Exception e) {
+                   textView2.setText(textView2.getText());
+               }
             }
         });
             buttons[4].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    startCounter++;
                     counter=0;
                    data = buttonFunctions.textviewControl(textView2.getText(),"7");
                     textView2.setText(data);
@@ -118,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"8");
                 textView2.setText(data);
             }
@@ -125,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[6].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"9");
                 textView2.setText(data);
             }
@@ -132,18 +153,26 @@ public class MainActivity extends AppCompatActivity {
         buttons[7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( buttonFunctions.operatorsCheck(textView2.getText())==false){
-                    textView2.setText(textView2.getText());
-                }
-                else {
-                    counter++;
-                    textView2.setText(textView2.getText()+"X");
-                }
+              try {
+                  String data = textView2.getText().toString();
+                  if (data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("+")||data.endsWith("-")||startCounter==0||data.endsWith(".")){
+                      textView2.setText(textView2.getText());
+                  }
+                  else {
+                      operationCounter++;
+                      dotCounter=0;
+                      counter++;
+                      textView2.setText(textView2.getText()+"X");
+                  }
+              } catch (Exception e) {
+                  textView2.setText(textView2.getText());
+              }
             }
         });
         buttons[8].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"4");
                 textView2.setText(data);
             }
@@ -151,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[9].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"5");
                 textView2.setText(data);
             }
@@ -158,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[10].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"6");
                 textView2.setText(data);
             }
@@ -165,18 +196,25 @@ public class MainActivity extends AppCompatActivity {
         buttons[11].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( buttonFunctions.operatorsCheck(textView2.getText())==false){
-                    textView2.setText(textView2.getText());
-                }
-                else {
-                    textView2.setText(textView2.getText()+"-");
-                    negcounter++;
-                }
+               try {
+                   String data = textView2.getText().toString();
+                   if ( data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("-+")|data.endsWith("+-")||startCounter==0||data.endsWith(".")){
+                       textView2.setText(textView2.getText());
+                   }
+                   else {
+                       dotCounter=0;
+                       textView2.setText(textView2.getText()+"-");
+                       negcounter++;
+                   }
+               } catch (Exception e) {
+                   textView2.setText(textView2.getText());
+               }
             }
         });
         buttons[12].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"1");
                 textView2.setText(data);
             }
@@ -184,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[13].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"2");
                 textView2.setText(data);
             }
@@ -191,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[14].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startCounter++;
                 data = buttonFunctions.textviewControl(textView2.getText(),"3");
                 textView2.setText(data);
             }
@@ -198,18 +238,35 @@ public class MainActivity extends AppCompatActivity {
         buttons[15].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( buttonFunctions.operatorsCheck(textView2.getText())==false){
+            try {
+                String data = textView2.getText().toString();
+                if (data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("-+")||data.endsWith("+-")||startCounter==0||data.endsWith(".")){
                     textView2.setText(textView2.getText());
                 }
                 else{
+                    dotCounter=0;
                     textView2.setText(textView2.getText()+"+");
                 }
+            } catch (Exception e) {
+                textView2.setText(textView2.getText());
+            }
             }
         });
         buttons[16].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView2.setText("-"+textView2.getText());
+                String data = textView2.getText().toString();
+                if (data.startsWith("-")&&!(data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("-+")||data.endsWith("+-"))) {
+                    textView2.setText(textView2.getText()+"-");
+                    negcounter++;
+                }
+                else if (data.startsWith("-")){
+                    textView2.setText(textView2.getText());
+                }
+                else{
+                    textView2.setText("-"+textView2.getText());
+                    negcounter++;
+                }
             }
         });
         buttons[17].setOnClickListener(new View.OnClickListener() {
@@ -222,29 +279,50 @@ public class MainActivity extends AppCompatActivity {
         buttons[18].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView2.setText(textView2.getText()+".");
+                try {
+                    String data = textView2.getText().toString();
+                    if ((data.endsWith("--")||data.endsWith("++")||data.endsWith("X")||data.endsWith("/")||data.endsWith("%")||data.endsWith("-+")||data.endsWith("+-")||startCounter==0||data.endsWith(".")||dotCounter!=0)){
+                        textView2.setText(textView2.getText());
+                    }
+                    else {
+                        dotCounter++;
+                        textView2.setText(textView2.getText()+".");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
         });
         buttons[19].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (textView2.getText().toString().contains("X")){
-                  textView1.setText(  buttonFunctions.multiply(textView2.getText()));
-                  textView2.setText("");
-                }
-                else if (textView2.getText().toString().contains("/")){
-                    textView1.setText(buttonFunctions.division(textView2.getText()));
+                startCounter=0;
+                counter=0;
+                dotCounter=0;
+                try {
+                    if (textView2.getText().toString().contains("X")){
+                        textView1.setText(  buttonFunctions.multiply(textView2.getText()));
+                        textView2.setText("");
+                    }
+                    else if (textView2.getText().toString().contains("/")){
+                        textView1.setText(buttonFunctions.division(textView2.getText()));
+                        textView2.setText("");
+                    }
+                    else if (textView2.getText().toString().contains("+")){
+                        textView1.setText(buttonFunctions.add(textView2.getText()));
+                        textView2.setText("");
+                    }
+                    else if(textView2.getText().toString().contains("-")){
+                        textView1.setText(buttonFunctions.sub(textView2.getText(),negcounter));
+                        textView2.setText("");
+                        negcounter = 0;
+                    }
+                } catch (Exception e) {
                     textView2.setText("");
+                    textView1.setText("Only 1 operator u can use...");
                 }
-                else if (textView2.getText().toString().contains("+")){
-                    textView1.setText(buttonFunctions.add(textView2.getText()));
-                    textView2.setText("");
-                }
-                else if(textView2.getText().toString().contains("-")){
-                    textView1.setText(buttonFunctions.sub(textView2.getText(),negcounter));
-                    textView2.setText("");
-                    negcounter = 0;
-                }
+
             }
         });
     }

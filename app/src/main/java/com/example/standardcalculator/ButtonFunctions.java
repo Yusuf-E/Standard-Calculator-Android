@@ -52,16 +52,26 @@ public class ButtonFunctions {
             return ""+result;
         } catch (NumberFormatException e) {
             if (counter==2){
-                String[] num = number.toString().split("-",-2);
-                double number1=Double.parseDouble(num[1]);
-                double number2= Double.parseDouble(num[2]);
-                result = number1-number2;
-                if (number1>number2){
-                    return "-"+result;
-                }
-                else{
+                try {
+                    String[] num = number.toString().split("-",-2);
+                    double number1=Double.parseDouble(num[1]);
+                    double number2= Double.parseDouble(num[2]);
+                    if (number1>number2){
+                        result = number1+number2;
+                        return "-"+result;
+                    }
+                    else{
+                        result = number1-number2;
+                        return ""+result;
+                    }
+                } catch (NumberFormatException ex) {
+                    String[] num = number.toString().split("-",-2);
+                    double number1=Double.parseDouble(num[0]);
+                    double number2= Double.parseDouble(num[2]);
+                    result= number1+number2;
                     return ""+result;
                 }
+
             }
             else if (counter==3){
                 String[] num = number.toString().split("-",-3);
@@ -79,20 +89,5 @@ public class ButtonFunctions {
             }
             return null;
     }
-    public boolean operatorsCheck(CharSequence data){
-        String string[] = new String[5];
-        string[0]= "%";
-        string[1]="X";
-        string[2]="/";
-        string[3]="-";
-        string[4]="+";
-    for (int i =0;i<5;i++){
-        for (int j=0;j<5;j++){
-        if (data.toString().endsWith(string[i]+string[j])){
-            return false;
-        }
-        }
-    }
-    return true;
-    }
+
 }
