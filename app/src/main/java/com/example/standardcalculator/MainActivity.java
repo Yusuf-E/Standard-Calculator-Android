@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
         textView1.setHeight(height/8);
         textView2.setHeight(height/5);
-        height = (int) ((height-(height/8)-(height/5))/5.9);
+        height = (int) ((height-(height/8)-(height/5))/6.2);
         width = width/4;
         System.out.println(width);
         buttonDetection(height,width);
