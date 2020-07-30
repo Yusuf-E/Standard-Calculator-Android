@@ -73,13 +73,14 @@
             android:textSize="24sp" />
 
         <Button
-            android:background="@color/opbot"
-            android:textColor="@color/numtxt"
             android:id="@+id/button8"
+            android:layout_height="wrap_content"
             android:width="80dp"
             android:height="80dp"
+            android:background="@color/opbot"
             android:text="/"
-            android:textSize="30sp" />
+            android:textColor="@color/numtxt"
+            android:textSize="24sp" />
 
         <Button
             android:background="@color/numbot"
@@ -109,13 +110,13 @@
             android:textSize="30sp" />
 
         <Button
-            android:background="@color/opbot"
-            android:textColor="@color/numtxt"
             android:id="@+id/button12"
             android:width="80dp"
             android:height="80dp"
+            android:background="@color/opbot"
             android:text="x"
-            android:textSize="30sp" />
+            android:textColor="@color/numtxt"
+            android:textSize="24sp" />
 
         <Button
             android:background="@color/numbot"
@@ -145,13 +146,13 @@
             android:textSize="30sp" />
 
         <Button
-            android:background="@color/opbot"
-            android:textColor="@color/numtxt"
             android:id="@+id/button16"
             android:width="80dp"
             android:height="80dp"
+            android:background="@color/opbot"
             android:text="-"
-            android:textSize="30sp" />
+            android:textColor="@color/numtxt"
+            android:textSize="24sp" />
 
         <Button
             android:background="@color/numbot"
@@ -181,13 +182,13 @@
             android:textSize="30sp" />
 
         <Button
-            android:background="@color/opbot"
-            android:textColor="@color/numtxt"
             android:id="@+id/button20"
             android:width="80dp"
             android:height="80dp"
+            android:background="@color/opbot"
             android:text="+"
-            android:textSize="30sp" />
+            android:textColor="@color/numtxt"
+            android:textSize="24sp" />
 
         <Button
             android:background="@color/numbot"
@@ -217,12 +218,12 @@
             android:textSize="30sp" />
 
         <Button
-            android:background="@color/opbot"
-            android:textColor="@color/numtxt"
             android:id="@+id/button24"
             android:width="80dp"
             android:height="80dp"
+            android:background="@color/opbot"
             android:text="="
-            android:textSize="30sp" />
+            android:textColor="@color/numtxt"
+            android:textSize="24sp" />
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
